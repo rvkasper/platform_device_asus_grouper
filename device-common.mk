@@ -51,6 +51,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     camera.flash_off=0 \
     ro.config.ringtone=Phobos.ogg \
     persist.sys.media.legacy-drm=true \
+    persist.sys.isUsbOtgEnabled=true \
     drm.service.enabled=true
 
 # libhwui flags
@@ -65,11 +66,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.isa.arm.features=lpae,div \
     dalvik.vm.profiler=1 \
     dalvik.vm.dex2oat-flags=--compiler-filter=interpret-only \
-    dalvik.vm.image-dex2oat-flags=
-
-# Enable USB OTG support
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=true
+    dalvik.vm.image-dex2oat-flags=""
 
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 
