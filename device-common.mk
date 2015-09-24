@@ -49,6 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.facelock.est_max_time=1000 \
     ro.facelock.use_intro_anim=true \
     camera.flash_off=0 \
+    ro.config.ringtone=Phobos.ogg \
     persist.sys.media.legacy-drm=true \
     drm.service.enabled=true
 
