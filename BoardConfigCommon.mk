@@ -97,6 +97,7 @@ BOARD_SEPOLICY_UNION += \
         gpsd.te \
         keystore.te \
         lmkd.te \
+	mac_permissions.xml \
         mediaserver.te \
         recovery.te \
         rild.te \
@@ -107,3 +108,4 @@ BOARD_SEPOLICY_UNION += \
         ueventd.te \
         vold.te \
         radio.te
+
