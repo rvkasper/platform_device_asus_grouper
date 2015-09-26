@@ -75,7 +75,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
     device/asus/grouper/ueventd.grouper.rc:root/ueventd.grouper.rc \
     device/asus/grouper/init.grouper.usb.rc:root/init.grouper.usb.rc \
-    device/asus/grouper/system/lib/modules/cifs.ko:root/system/lib/modules/cifs.ko \
     device/asus/grouper/gps.conf:system/etc/gps.conf
 
 ifneq ($(TARGET_PREBUILT_WIFI_MODULE),)
