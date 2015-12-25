@@ -37,6 +37,9 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a9
 
 TARGET_USERIMAGES_USE_EXT4 := true
+ifeq ($(HOST_OS),linux)
+TARGET_USERIMAGES_USE_F2FS := true
+endif
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
 # Disable journaling on system.img to save space.
@@ -69,6 +72,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/asus/grouper/egl.cfg
 
+# Hardware tunables
+BOARD_HARDWARE_CLASS := device/asus/grouper/cmhw/
+
 ifneq ($(HAVE_NVIDIA_PROP_SRC),false)
 # needed for source compilation of nvidia libraries
 -include vendor/nvidia/proprietary_src/build/definitions.mk
@@ -97,6 +103,7 @@ BOARD_SEPOLICY_UNION += \
         gpsd.te \
         keystore.te \
         lmkd.te \
+	mac_permissions.xml \
         mediaserver.te \
         recovery.te \
         rild.te \
@@ -107,3 +114,4 @@ BOARD_SEPOLICY_UNION += \
         ueventd.te \
         vold.te \
         radio.te
+
