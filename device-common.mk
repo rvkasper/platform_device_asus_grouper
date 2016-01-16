@@ -141,6 +141,19 @@ PRODUCT_PACKAGES += \
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
+    fsck.f2fs \
+    mkfs.f2fs \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    mkfs.exfat \
+    fsck.exfat \
+    mount.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    ntfsfix \
+    ntfs-3g \
     setup_fs
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
