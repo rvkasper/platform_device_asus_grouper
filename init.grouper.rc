@@ -381,6 +381,15 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     oneshot
 #Sensor load calibration files end
 
+# virtual sdcard daemon running as media_rw (1023)
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -t 4 -l /data/media /mnt/shell/emulated
+    class late_start
+
+# daemon for the USB OTG storage, running as media_rw (1023) and
+# giving write permission to sdcard_rw (1015)
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
+    class late_start
+    disabled
 
 # bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
 service bugreport /system/bin/dumpstate -d -p -B \
