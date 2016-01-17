@@ -20,7 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # overwrite product specific build properties
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=grouper \
-    BUILD_DISPLAY_ID="BSZAospLp-$(BUILD_ID)-v1.9.5"
+    BUILD_DISPLAY_ID="MelloShmallow-$(BUILD_ID)-v0.10"
 
 PRODUCT_COPY_FILES := \
     device/asus/grouper/fstab.grouper:root/fstab.grouper \
