@@ -30,6 +30,29 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.supplicant_scan_interval=15 \
     tf.enable=y \
     persist.sys.media.legacy-drm=true \
+    ro.error.receiver.system.apps=com.google.android.gms \
+    profiler.force_disable_err_rpt=1 \
+    profiler.force_disable_ulog=1 \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.setupwizard.network_required=any \
+    ro.setupwizard.require_network=wifi \
+    ro.setupwizard.gservices_delay=-1 \
+    keyguard.no_require_sim=true \
+    ro.config.nocheckin=1 \
+    persist.sys.use.dithering=1 \
+    persist.sys.purgeable_assets=1 \
+    net.tethering.noprovisioning=true \
+    persist.sys.dun.override=0 \
+    ro.facelock.black_timeout=1250 \
+    ro.facelock.det_timeout=1500 \
+    ro.facelock.rec_timeout=2500 \
+    ro.facelock.lively_timeout=2500 \
+    ro.facelock.est_max_time=1000 \
+    ro.facelock.use_intro_anim=true \
+    camera.flash_off=0 \
+    ro.config.ringtone=Phobos.ogg \
+    persist.sys.media.legacy-drm=true \
+    persist.sys.isUsbOtgEnabled=true \
     drm.service.enabled=true
 
 # libhwui flags
@@ -39,6 +62,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.isa.arm.features=lpae,div \
+    dalvik.vm.profiler=1 \
+    dalvik.vm.dex2oat-flags=--compiler-filter=interpret-only \
+    dalvik.vm.image-dex2oat-flags=""
 
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 
@@ -105,6 +134,19 @@ PRODUCT_PACKAGES += \
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
+    fsck.f2fs \
+    mkfs.f2fs \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    mkfs.exfat \
+    fsck.exfat \
+    mount.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    ntfsfix \
+    ntfs-3g \
     setup_fs
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
